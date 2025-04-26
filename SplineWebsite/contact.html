@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Nexus Robotics",
+      "url": "https://nexus-robotics.com",
+      "logo": "https://nexus-robotics.com/logo.svg",
+      "sameAs": ["https://linkedin.com/company/nexus-robotics"]
+    }
+    </script>
+    <title>Nexus Robotics & UAV Solutions - Contact Us</title> <!-- Updated title -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Nexus Robotics & UAV Solutions</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Contact Us</h1>
+
+        <section class="content-section contact-details">
+          <h2>Get In Touch</h2>
+          <div class="details-grid">
+            <div>
+              <h4>Address</h4>
+              <p>123 Innovation Drive<br>Tech City, TX 75001<br>USA</p>
+            </div>
+            <div>
+              <h4>Phone</h4>
+              <p>+1 (555) 123-4567</p>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p>info@nexus-robotics.com</p> <!-- Use placeholder -->
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section contact-form-section">
+          <h2>Send Us a Message</h2>
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-secondary">Send Message</button>
+          </form>
+        </section>
+
+        <section class="content-section map-section">
+          <h2>Our Global Reach</h2>
+          <!-- Simple Placeholder SVG World Map -->
+          <svg id="world-map" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" style="max-width: 100%; height: auto; stroke-linecap: round; stroke-linejoin: round;">
+            <defs>
+              <style type="text/css">
+                .land { fill: #334155; } /* Dark slate */
+                .service-area {
+                  fill: none;
+                  stroke: var(--accent);
+                  stroke-width: 3;
+                  /* Initial state set by JS */
+                }
+              </style>
+            </defs>
+            <!-- Simplified land masses - replace with a real SVG if possible -->
+            <path class="land" d="M100,100 h200 v100 h-100 z M400,150 h150 v150 h-150 z M600,300 h200 v100 h-200 z M150,350 h100 v50 h-100 z"/>
+            <!-- Example Service Area Paths -->
+            <path class="service-area" id="area-na" d="M150,150 Q 250,50 350,150 T 450,250"/>
+            <path class="service-area" id="area-eu" d="M450,200 Q 550,100 650,200 T 750,300"/>
+            <path class="service-area" id="area-as" d="M650,350 Q 750,250 850,350"/>
+          </svg>
+        </section>
+
+        <!-- Chat Bubble Placeholder -->
+        <div class="chat-bubble" id="chat-bubble">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 12H5v-2h14v2zm0-3H5V9h14v2zm0-3H5V6h14v2z"/></svg>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nexus Robotics & UAV Solutions</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

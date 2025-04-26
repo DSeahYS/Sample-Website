@@ -1,0 +1,911 @@
+:root {
+  --primary: #0F172A;
+  --secondary: #00D8FF; /* Bright cyan */
+  --accent: #FF2D75;   /* Bright pink */
+  --highlight: #00FF88; /* Bright green */
+  --text: #FFFFFF;     /* Pure white */
+  --dark-text: #0F1A2F; /* Dark blue for contrast */
+}
+
+/* Update all text elements to use vibrant colors */
+body {
+  color: var(--text);
+}
+
+h1, h2, h3, h4 {
+  color: var(--secondary);
+}
+
+a, .link {
+  color: var(--highlight);
+}
+
+.button, .btn {
+  background: var(--accent);
+  color: var(--dark-text);
+}
+
+.metric, .stat-number {
+  color: var(--highlight);
+}
+
+.footer, footer {
+  color: var(--text);
+}
+
+/* Specific element updates */
+.header-content h1 {
+  color: var(--highlight);
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+}
+
+.hero-text h2 {
+  color: var(--secondary);
+}
+
+.product-card h3 {
+  color: var(--secondary);
+}
+
+.product-card .category {
+  color: var(--accent);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--primary);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  background-color: rgba(15, 23, 42, 0.8);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--highlight);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.hero-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#scene-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 20vh;
+}
+
+.content-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  nav ul {
+    gap: 1rem;
+  }
+  
+  .hero-text {
+    padding-top: 15vh;
+  }
+}
+/* Floating Background Elements */
+.floating-element {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(6, 182, 212, 0.2); /* Light cyan with transparency */
+  border-radius: 50%;
+  pointer-events: none; /* Prevent interaction */
+  z-index: -1; /* Place behind content */
+  top: 50%; /* Start near center */
+  left: 50%;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* --- Video Background --- */
+#scene-container {
+    position: relative; /* Needed for absolute positioning of the video */
+    overflow: hidden; /* Hide video overflow */
+    height: 100vh; /* Or adjust as needed */
+    width: 100%;
+}
+
+#scene-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Place video behind other content */
+}
+
+/* Adjust hero text z-index if needed */
+.hero-text {
+    position: relative; /* Ensure it stays above the video */
+    z-index: 1;
+    /* Add other styles like text color, background for readability */
+    color: var(--light-color); /* Example: Ensure text is visible */
+    background-color: rgba(0, 0, 0, 0.3); /* Optional semi-transparent background */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+/* --- Statistics Section --- */
+.stats-section {
+    padding: 4rem 2rem;
+    background-color: var(--light-bg); /* Or choose a suitable background */
+    text-align: center;
+}
+
+.stats-section h2 {
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 2rem; /* Add space between items */
+}
+
+.stat-item {
+    text-align: center;
+    flex-basis: 150px; /* Give items a base width */
+}
+
+.stat-item p {
+    margin-top: 0.5rem;
+    color: var(--dark-color);
+    font-size: 1rem;
+}
+
+.stat-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--accent-color);
+    display: inline-block; /* Keep number and symbol together */
+}
+
+.stat-item span:not(.stat-number) { /* Style the '%' and '+' symbols */
+    font-size: 1.5em; /* Slightly smaller than the number */
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-left: 0.2em; /* Space between number and symbol */
+    vertical-align: baseline; /* Align with the number */
+}
+/* Spline Showcase Section */
+.spline-showcase {
+  /* Inherits content-section padding */
+  text-align: center; 
+}
+
+.spline-container {
+  height: 600px; /* Adjust as needed */
+  max-width: 900px; /* Adjust as needed */
+  margin: 2rem auto;
+  border-radius: 8px; /* Optional styling */
+  overflow: hidden; /* Optional */
+  background-color: rgba(255, 255, 255, 0.05); /* Slight background */
+}
+
+#product-spline-viewer { /* Target the spline-viewer directly */
+  width: 100%;
+  height: 100%;
+  display: block; /* Ensure block display */
+  border-radius: 8px; /* Match container */
+}
+/* Styles for Products Page */
+.product-details-grid .product-card { /* Style detail cards */
+   /* Add specific styles, maybe more padding, different layout */
+   background-color: rgba(255, 255, 255, 0.05);
+   padding: 1.5rem;
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.product-image-placeholder {
+  height: 200px; /* Adjust */
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary);
+  font-style: italic;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.btn { /* Base button style if not already present */
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-secondary { /* Specific style */
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-secondary:hover {
+  background-color: #0891b2; /* Slightly darker teal */
+}
+
+.download-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.download-link:hover {
+  text-decoration: underline;
+}
+
+/* Placeholder styles */
+#comparison-table-placeholder,
+#api-docs-placeholder {
+  color: var(--secondary);
+  font-style: italic;
+}
+/* Use Case Studies Section */
+.case-studies-section {
+  /* Make the section tall enough for scroll effect */
+  min-height: 150vh; /* Adjust as needed */
+  position: relative; /* Needed for sticky positioning of wrapper */
+}
+
+.horizontal-scroll-wrapper {
+  height: 70vh; /* Adjust height of the visible scroll area */
+  overflow-x: hidden;
+  position: sticky; /* Stick to viewport during scroll */
+  top: 15vh; /* Adjust vertical position */
+  margin-top: 3rem;
+  border: 1px solid var(--secondary); /* Optional: visualize */
+  border-radius: 8px;
+}
+
+.case-studies-container {
+  display: flex;
+  /* Width = number of items * 100% */
+  width: 400%; /* 4 items */
+  height: 100%;
+  will-change: transform; /* Performance hint */
+}
+
+.case-study {
+  /* Width = 100% / number of items */
+  width: 25%; /* 100 / 4 */
+  height: 100%;
+  flex-shrink: 0;
+  padding: 2rem;
+  box-sizing: border-box; /* Include padding in width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.1); /* Separator */
+}
+
+.case-study:last-child {
+    border-right: none;
+}
+
+.case-study img {
+  max-width: 80%;
+  height: auto;
+  max-height: 40%; /* Limit image height */
+  margin-top: 1rem;
+  border-radius: 4px;
+  object-fit: cover;
+}
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  max-width: 800px; /* Adjust width */
+  margin: 3rem auto;
+  padding-left: 50px; /* Space for the line/markers */
+}
+
+.timeline::before { /* The vertical line */
+  content: '';
+  position: absolute;
+  left: 15px; /* Adjust position */
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--secondary);
+  border-radius: 2px;
+}
+
+.timeline-event {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 30px; /* Space from the line */
+  opacity: 0; /* Initial state for animation */
+}
+
+.timeline-event:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker { /* The dot on the line */
+  content: '';
+  position: absolute;
+  left: -43px; /* Position relative to timeline padding-left */
+  top: 5px; /* Align vertically */
+  width: 12px;
+  height: 12px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  border: 2px solid var(--primary); /* Match background */
+  z-index: 1;
+}
+
+.timeline-content {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 6px;
+}
+
+.timeline-year {
+  display: block;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-size: 0.9em;
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  color: var(--secondary);
+}
+/* Team Profiles Styles */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.team-card {
+  background-color: transparent; /* Needed for perspective */
+  height: 380px; /* Adjust height */
+  perspective: 1000px; /* Enables 3D space */
+  cursor: pointer;
+  opacity: 0; /* Initial state for animation */
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.team-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  text-align: center;
+}
+
+.card-front {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-front img {
+  width: 120px; /* Adjust size */
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--secondary);
+}
+
+.card-front h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  color: var(--text);
+}
+
+.card-front p {
+  font-size: 0.9em;
+  color: var(--secondary);
+  margin: 0;
+}
+
+.card-back {
+  background-color: var(--secondary);
+  color: var(--primary);
+  transform: rotateY(180deg); /* Start flipped */
+}
+
+.card-back h4 {
+    margin-bottom: 1rem;
+}
+
+.card-back p {
+    font-size: 0.95em;
+    margin-bottom: 1.5rem;
+}
+
+.btn-accent { /* Button style for back card */
+   background-color: var(--accent);
+   color: var(--primary);
+   padding: 0.6rem 1.2rem; /* Added padding */
+   border-radius: 5px; /* Added border-radius */
+   text-decoration: none; /* If using <a> */
+   display: inline-block; /* If using <a> */
+   transition: background-color 0.3s ease; /* Added transition */
+}
+
+.btn-accent:hover {
+    background-color: #d97706; /* Darker accent */
+}
+/* Vibrant Color Scheme */
+.stats-section h2 {
+    color: #00D8FF; /* Bright cyan */
+    text-shadow: 0 0 8px rgba(0, 216, 255, 0.3);
+}
+
+.stat-number {
+    color: #00FF88; /* Bright green */
+    text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+}
+
+.product-card h3 {
+    color: #00D8FF; /* Bright cyan */
+}
+
+.product-card .category {
+    color: #FF2D75; /* Bright pink */
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #FFFFFF;
+    border-top: 1px solid rgba(0, 216, 255, 0.3);
+}
+
+footer a {
+    color: #00FF88; /* Bright green */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #00D8FF; /* Bright cyan */
+}
+
+/* Rest of your existing styles... */
+.header-content h1 {
+    color: #00FF88; /* Bright green */
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+    margin: 0;
+}
+
+.hero-section h1 {
+    color: #00FF88; /* Bright green for main title */
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+    margin-bottom: 1rem;
+}
+
+.hero-section h2 {
+    color: #00D8FF; /* Bright cyan for subtitles */
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section p {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Rest of your existing styles... */
+.contact-details {
+    background: rgba(0, 0, 0, 0.7); /* Dark background */
+    color: #ffffff; /* Pure white text */
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-details h2 {
+    color: #00ff88; /* Vibrant green */
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.contact-details h4 {
+    color: #00d8ff; /* Bright cyan */
+    font-weight: 600;
+}
+
+.contact-details p {
+    color: #ffffff;
+}
+
+.contact-form {
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    border: 1px solid rgba(0, 216, 255, 0.3);
+}
+
+.contact-form h2 {
+    color: #00d8ff; /* Bright cyan */
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    border: 1px solid rgba(0, 216, 255, 0.3);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff2d75; /* Bright pink */
+    box-shadow: 0 0 0 3px rgba(255, 45, 117, 0.3);
+}
+
+.contact-form button {
+    background: #ff2d75; /* Bright pink */
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #ff0066; /* Deeper pink */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 0, 102, 0.4);
+}
+
+.chat-bubble {
+    background: #ff2d75; /* Bright pink */
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(255, 45, 117, 0.5);
+}
+
+.map-section h2 {
+    color: #00d8ff; /* Bright cyan */
+}
+.contact-details {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    margin-bottom: 2rem;
+}
+
+.contact-details .details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.contact-details h4 {
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form-section {
+    margin: 3rem 0;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
+}
+
+.contact-form button[type="submit"] {
+    background: var(--accent);
+    color: var(--primary);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.contact-form button[type="submit"]:hover {
+    background: #d97706; /* Darker accent */
+    transform: translateY(-2px);
+}
+
+.map-section {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.map-section svg#world-map {
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    max-width: 100%;
+}
+
+.chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent);
+    color: var(--primary);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.chat-bubble svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contact Page Styles */
+.contact-details {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+.contact-details h4 {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.contact-details p {
+    margin: 0.5rem 0;
+}
+
+.contact-form-section {
+    margin: 3rem 0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* Existing contact page styles below... */
+.contact-details .details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.contact-details h4 {
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+.contact-form-section .form-group {
+  margin-bottom: 1.5rem;
+}
+.contact-form-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.contact-form-section input[type="text"],
+.contact-form-section input[type="email"],
+.contact-form-section textarea {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: var(--text);
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s; /* For focus animation */
+}
+.contact-form-section input[type="text"]:focus,
+.contact-form-section input[type="email"]:focus,
+.contact-form-section textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3); /* Accent glow */
+}
+.contact-form-section button[type="submit"] {
+  margin-top: 1rem;
+}
+.map-section {
+  text-align: center;
+}
+.map-section svg#world-map {
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+.chat-bubble {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--accent);
+  color: var(--primary);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0; /* Initial state for animation */
+  transform: translateY(20px); /* Initial state for animation */
+}
+.chat-bubble svg {
+    width: 28px;
+    height: 28px;
+}

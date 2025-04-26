@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Nexus Robotics",
+      "url": "https://nexus-robotics.com",
+      "logo": "https://nexus-robotics.com/logo.svg",
+      "sameAs": ["https://linkedin.com/company/nexus-robotics"]
+    }
+    </script>
+    <title>Nexus Robotics & UAV Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Nexus Robotics & UAV Solutions</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div id="scene-container">
+                <video src="assets/videos/drone_footage.mp4" autoplay loop muted playsinline poster="assets/images/video_poster.jpg"></video>
+            </div>
+            <div class="hero-text">
+                <h2>Innovative Robotics Solutions</h2>
+                <p>Cutting-edge UAV technology for industrial applications</p>
+            </div>
+        </section>
+
+        <section class="stats-section content-section" id="stats">
+          <h2>Key Metrics</h2>
+          <div class="stats-container">
+            <div class="stat-item">
+              <span class="stat-number" data-target="235">0</span>
+              <p>Successful Missions</p>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="98">0</span><span>%</span>
+              <p>Operational Uptime</p>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="50">0</span><span>+</span>
+              <p>Satisfied Clients</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="solutions" class="content-section spline-showcase">
+          <h2>Solutions Showcase</h2>
+          <p>Explore our flagship product in interactive 3D.</p>
+          <div class="spline-container">
+             <!-- Ensure loading-anim-type is suitable -->
+             <spline-viewer id="product-spline-viewer" loading-anim-type="spinner-small-light" url="https://prod.spline.design/DEFAULT_SCENE/scene.splinecode"></spline-viewer>
+             <!-- NOTE: Replace DEFAULT_SCENE URL with a real placeholder if possible, or leave as is -->
+          </div>
+        </section>
+
+        <section id="products" class="content-section">
+            <h2>Our Products</h2>
+            <div class="product-grid" id="product-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nexus Robotics & UAV Solutions</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.4.2/build/spline-viewer.js"></script>
+</body>
+</html>
